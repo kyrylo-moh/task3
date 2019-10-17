@@ -17,11 +17,12 @@ public class FigureController {
     }
 
     private void showListFigure() {
+        //Collections.sort(figureTriangleList);
         for (FigureTriangle figureTriangle : figureTriangleList)
             System.out.println(figureTriangle);
     }
 
-    private void reiteraton(){
+    private void reiteration(){
         System.out.print(new Output().printQuestion());
         String answer = new Input().getAnswer();
         if (answer.equals("y") || answer.equals("yes"))
@@ -44,7 +45,7 @@ public class FigureController {
         System.out.print("Input name: ");
         String name = new Input().getName();
         addFigureTriangle(new FigureTriangle(arr[0], arr[1], arr[2], name));
-        reiteraton();
+        reiteration();
     }
 
 }
