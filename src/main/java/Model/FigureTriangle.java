@@ -2,6 +2,7 @@ package Model;
 
 public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangle> {
 
+    static int counter = 0;
     private double sideA;
     private double sideB;
     private double sideC;
@@ -12,6 +13,7 @@ public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangl
         this.sideB = sideB;
         this.sideC = sideC;
         this.triangleName = triangleName;
+        counter ++;
     }
 
     public double getSideA() {
@@ -53,7 +55,7 @@ public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangl
 
     @Override
     public String toString() {
-        return "[Triangle " + triangleName + "]: " + this.getArea() + " cm";
+        return counter + ". [Triangle " + triangleName + "]: " + this.getArea() + " cm";
     }
 
     public int compareTo(FigureTriangle o) {
