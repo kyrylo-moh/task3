@@ -46,6 +46,7 @@ public class FigureController {
         String name = new Input().getName();
         addFigureTriangle(new FigureTriangle(arr[0], arr[1], arr[2], name));
         reiteration();
+
     }
 
 }
