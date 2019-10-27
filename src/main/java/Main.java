@@ -1,4 +1,4 @@
-import Controller.*;
+import controller.FigureController;
 
 public class Main {
 

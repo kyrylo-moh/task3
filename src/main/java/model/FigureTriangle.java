@@ -1,8 +1,8 @@
-package Model;
+package model;
 
-public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangle> {
+public class FigureTriangle implements Comparable<FigureTriangle> {
 
-    static int counter = 0;
+    private static int counter = 0;
     private double sideA;
     private double sideB;
     private double sideC;
@@ -48,7 +48,7 @@ public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangl
         this.triangleName = triangleName;
     }
 
-    public double getArea() {
+    private double getArea() {
         double p = (sideA + sideB + sideC) / 2;
         return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
     }
@@ -58,8 +58,8 @@ public class FigureTriangle implements IFigureTriangle, Comparable<FigureTriangl
         return counter + ". [Triangle " + triangleName + "]: " + this.getArea() + " cm";
     }
 
-    public int compareTo(FigureTriangle o) {
-        int count = (int) o.getArea();
+    public int compareTo(FigureTriangle object) {
+        int count = (int) object.getArea();
         return (int)(count - getArea());
     }
 }

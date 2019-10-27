@@ -1,33 +1,34 @@
-package Controller;
+package controller;
 
-import Model.FigureTriangle;
-import Util.*;
+import model.FigureTriangle;
+import service.Service;
+import util.*;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.*;
 
 
 public class FigureController {
 
     private FigureTriangle figureTriangle;
-
+    private Service service = new Service();
     private List<FigureTriangle> figureTriangleList = new ArrayList<FigureTriangle>();
 
     private void addFigureTriangle(FigureTriangle figureTriangle) {
         figureTriangleList.add(figureTriangle);
     }
 
-    private void showListFigure() {
-        //Collections.sort(figureTriangleList);
-        for (FigureTriangle figureTriangle : figureTriangleList)
-            System.out.println(figureTriangle);
-    }
+//    private void showListFigure() {
+//        for (FigureTriangle figureTriangle : figureTriangleList)
+//            System.out.println(figureTriangle);
+//    }
 
     private void reiteration(){
         System.out.print(new Output().printQuestion());
         String answer = new Input().getAnswer();
         if (answer.equals("y") || answer.equals("yes"))
             runController();
-        else showListFigure();
+        else service.showListFigure(figureTriangleList);
     }
 
     public void   runController() {
@@ -48,5 +49,4 @@ public class FigureController {
         reiteration();
 
     }
-
 }
