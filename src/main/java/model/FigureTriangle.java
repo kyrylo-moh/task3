@@ -7,6 +7,7 @@ public class FigureTriangle implements Comparable<FigureTriangle> {
     private double sideB;
     private double sideC;
     private String triangleName;
+    private double area;
 
     public FigureTriangle(double sideA, double sideB, double sideC, String triangleName) {
         this.sideA = sideA;
@@ -48,14 +49,17 @@ public class FigureTriangle implements Comparable<FigureTriangle> {
         this.triangleName = triangleName;
     }
 
-    private double getArea() {
-        double p = (sideA + sideB + sideC) / 2;
-        return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 
     @Override
     public String toString() {
-        return counter + ". [Triangle " + triangleName + "]: " + this.getArea() + " cm";
+        return counter + ". [Triangle " + triangleName + "]: " + String.format("%.4g%n", this.getArea()) + " cm";
     }
 
     public int compareTo(FigureTriangle object) {
